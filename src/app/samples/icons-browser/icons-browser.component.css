@@ -1,0 +1,17 @@
+.search-wrapper {
+	width: 740px;
+}
+
+.selected-icon {
+	margin: 5px;
+	border: 0;
+	display: block;
+	font-size:16px;
+	color:#66bb6a;
+	font-weight:bold;
+}
+
+.controls-wrapper {
+	width: 740px;
+	text-align: left;
+}

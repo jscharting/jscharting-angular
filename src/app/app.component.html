@@ -1,0 +1,9 @@
+<div>
+	<label>
+		Samples: <select [(ngModel)]="sample" (change)="changeSample()">
+			<option *ngFor="let sample of samples" [ngValue]="sample">{{sample.name}}</option>
+		</select>
+		<p *ngIf="sample">{{sample.description}}</p>
+	</label>
+	<router-outlet></router-outlet>
+</div>

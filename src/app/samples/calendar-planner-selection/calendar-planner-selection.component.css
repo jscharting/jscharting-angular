@@ -1,0 +1,42 @@
+.chart-container {
+	width: 300px;
+	height: 300px;
+	margin: 40px auto;
+}
+
+.events-div {
+	width: 300px;
+	margin: 0px auto;
+	height: 600px;
+	display: block;
+	font-family: Arial
+}
+
+.day {
+	color: #263238;
+	width: 40px;
+	float: left;
+	padding-top: 5px;
+	padding-right: 10px;
+	text-align: center;
+	font-size: 12px
+}
+
+.events {
+	float: left;
+}
+
+.day-events {
+	width: 300px;
+	overflow: hidden;
+	clear: right;
+}
+
+.day-events table {
+	width: 200px;
+	font-size: 14px;
+	word-wrap: break-word;
+	padding: 8px;
+	margin: 5px;
+	color: #263238
+}

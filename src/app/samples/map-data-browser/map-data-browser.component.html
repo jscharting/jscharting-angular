@@ -1,0 +1,12 @@
+<div>
+	<select [(ngModel)]="country" (change)="changeCountry()">
+		<option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
+	</select>
+	<select *ngIf="country" [(ngModel)]="province" (change)="changeProvince()">
+		<option *ngFor="let province of provinces" [ngValue]="province">{{province.name}}</option>
+	</select>
+	<select *ngIf="country" [(ngModel)]="region" (change)="changeRegion()">
+		<option *ngFor="let region of regions" [ngValue]="region">{{region.name}}</option>
+	</select>
+	<div class="chart-container" #chartTargetElement></div>
+</div>
