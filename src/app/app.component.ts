@@ -48,6 +48,11 @@ export class AppComponent implements OnInit {
 			path: '/samples/icons-browser',
 			name: 'Icons Browser',
 			description: 'Icon browser with search to view and find all available icons.'
+		},
+		{
+			path: '/samples/micro-progress',
+			name: 'Micro Progress',
+			description: 'Demonstrate using JSC.label() with microcharts.'
 		}
 	];
 

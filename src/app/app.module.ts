@@ -15,6 +15,7 @@ import {MapDataBrowserComponent} from './samples/map-data-browser/map-data-brows
 import {RadarColCompleteComponent} from './samples/radar-col-complete/radar-col-complete.component';
 import {ServiceSampleComponent} from './samples/service-sample/service-sample.component';
 import {IconsBrowserComponent} from './samples/icons-browser/icons-browser.component';
+import {MicroProgressComponent} from './samples/micro-progress/micro-progress.component';
 
 import {FileContentService} from './samples/shared/file-content.service';
 import {ScriptService} from './samples/shared/script.service';
@@ -29,7 +30,8 @@ import {ScriptService} from './samples/shared/script.service';
 		MapDataBrowserComponent,
 		RadarColCompleteComponent,
 		ServiceSampleComponent,
-		IconsBrowserComponent
+		IconsBrowserComponent,
+		MicroProgressComponent
 	],
 	imports: [
 		AppRoutingModule,

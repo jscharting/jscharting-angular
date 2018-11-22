@@ -9,6 +9,7 @@ import {MapDataBrowserComponent} from './samples/map-data-browser/map-data-brows
 import {RadarColCompleteComponent} from './samples/radar-col-complete/radar-col-complete.component';
 import {ServiceSampleComponent} from './samples/service-sample/service-sample.component';
 import {IconsBrowserComponent} from './samples/icons-browser/icons-browser.component';
+import {MicroProgressComponent} from './samples/micro-progress/micro-progress.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'samples/calendar-exams', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
 	{path: 'samples/map-data-browser', component: MapDataBrowserComponent},
 	{path: 'samples/radar-col-complete', component: RadarColCompleteComponent},
 	{path: 'samples/service-sample', component: ServiceSampleComponent},
-	{path: 'samples/icons-browser', component: IconsBrowserComponent}
+	{path: 'samples/icons-browser', component: IconsBrowserComponent},
+	{path: 'samples/micro-progress', component: MicroProgressComponent}
 ];
 
 @NgModule({
