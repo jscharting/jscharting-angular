@@ -1,5 +1,7 @@
 import {AfterViewInit, Directive, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, NgZone} from '@angular/core';
 
+import JSC from './jscharting-common';
+
 @Directive({
 	selector: '[appJSCharting]'
 })
@@ -8,13 +10,11 @@ export class JSChartingDirective implements AfterViewInit, OnChanges, OnDestroy 
 	@Input() callback: (chart: any) => void;
 
 	private chart: any;
-	private JSC: any;
 
 	constructor(
 		private element: ElementRef,
 		private zone: NgZone
 	) {
-		this.JSC = window['JSC'];
 	}
 
 	ngAfterViewInit() {
@@ -53,7 +53,7 @@ export class JSChartingDirective implements AfterViewInit, OnChanges, OnDestroy 
 		}
 
 		this.setOptionsTargetElement();
-		this.chart = new this.JSC.Chart(this.options, this.callback);
+		this.chart = new JSC.Chart(this.options, this.callback);
 	}
 
 	private setOptionsTargetElement() {

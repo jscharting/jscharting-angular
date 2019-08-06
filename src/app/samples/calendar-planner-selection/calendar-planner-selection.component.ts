@@ -1,6 +1,7 @@
 import {Component, AfterViewInit, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 
 import {FileContentService} from '../shared/file-content.service.js';
+import JSC from '../shared/jscharting-common';
 
 @Component({
 	selector: 'app-calendar-planner-selection',
@@ -18,7 +19,7 @@ export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestr
 
 	ngAfterViewInit(): void {
 		this.fileContentService.getFileContent('assets/events_data2.csv').subscribe((csvString: string) => {
-			const parsedCsv = window['JSC'].parseCsv(csvString);
+			const parsedCsv = JSC.parseCsv(csvString);
 			this.renderChart(parsedCsv.data);
 		});
 	}
@@ -31,7 +32,7 @@ export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestr
 
 	private renderChart(rows: any[]) {
 		const chartConfig = this.createChartConfig(rows);
-		this.chart = new window['JSC'].Chart(
+		this.chart = new JSC.Chart(
 			chartConfig,
 			(chart) => {
 				this.printEventInfo(chart);
@@ -51,7 +52,7 @@ export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestr
 		const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 		return `<div class="day-events">
 			<div class="day">
-				<span style="font-size:22px; font-weight:bold">${window['JSC'].formatDate(point.tokenValue('%date'), 'dd')}</span>
+				<span style="font-size:22px; font-weight:bold">${JSC.formatDate(point.tokenValue('%date'), 'dd')}</span>
 				<span style="font-weight:100;text-transform:uppercase">${weekDays[new Date(point.tokenValue('%date')).getDay()]}</span>
 			</div>
 			<div class="events">${attributes.events}</div>
@@ -59,7 +60,7 @@ export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestr
 	}
 
 	private createChartConfig(rows: any[]): any {
-		const palette = window['JSC'].getPalette(0),
+		const palette = JSC.getPalette(0),
 			entries = this.createEntriesByRows(rows),
 			chartConfig: any = {
 				targetElement: this.chartTargetElement.nativeElement,
@@ -150,7 +151,7 @@ export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestr
 								<icon name=material/toggle/radio-button-unchecked color=black size=4>${row[2]}
 							</th>
 							<th style="text-align:right;font-size:10px; width:50px;">
-								${window['JSC'].formatDate(new Date(row[0]), 't')}
+								${JSC.formatDate(new Date(row[0]), 't')}
 							</th>
 						</tr>
 					</table>

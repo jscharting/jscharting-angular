@@ -2,6 +2,8 @@ import {Component, AfterViewInit, OnDestroy, ViewChild, ElementRef} from '@angul
 
 import {FileContentService} from '../shared/file-content.service';
 
+import JSC from '../shared/jscharting-common';
+
 @Component({
 	selector: 'app-calendar-exams',
 	templateUrl: './calendar-exams.component.html',
@@ -17,7 +19,7 @@ export class CalendarExamsComponent implements AfterViewInit, OnDestroy {
 
 	ngAfterViewInit(): void {
 		this.fileContentService.getFileContent('assets/examSchedule.csv').subscribe((csvString: string) => {
-			const parsedData = window['JSC'].parseCsv(csvString);
+			const parsedData = JSC.parseCsv(csvString);
 			this.renderChart(parsedData.data);
 		});
 	}
@@ -30,11 +32,11 @@ export class CalendarExamsComponent implements AfterViewInit, OnDestroy {
 
 	private renderChart(rows: any[]) {
 		const chartConfig = this.createChartConfig(rows);
-		this.chart = new window['JSC'].Chart(chartConfig, null);
+		this.chart = new JSC.Chart(chartConfig, null);
 	}
 
 	private createChartConfig(rows: any[]): any {
-		const palette = window['JSC'].getPalette(0);
+		const palette = JSC.getPalette(0);
 		return {
 			targetElement: this.chartTargetElement.nativeElement,
 			debug: true,

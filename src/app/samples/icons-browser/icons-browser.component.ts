@@ -1,6 +1,8 @@
-import {Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 import {ScriptService} from '../shared/script.service';
+
+import JSC from '../shared/jscharting-common';
 
 @Component({
 	selector: 'app-icons-browser',
@@ -62,7 +64,7 @@ export class IconsBrowserComponent implements AfterViewInit {
 						this.showGroupIcons(this.chart);
 					};
 
-					this.chart = new window['JSC'].Chart(
+					this.chart = new JSC.Chart(
 						this.getChartOptions(),
 						(chart) => {
 							this.showGroupIcons(chart);

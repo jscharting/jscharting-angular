@@ -1,5 +1,7 @@
 import {Component, AfterViewInit, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 
+import JSC from '../shared/jscharting-common';
+
 @Component({
 	selector: 'app-radar-col-complete',
 	templateUrl: './radar-col-complete.component.html',
@@ -11,7 +13,7 @@ export class RadarColCompleteComponent implements AfterViewInit, OnDestroy {
 	private chart: any;
 
 	ngAfterViewInit(): void {
-		this.chart = new window['JSC'].Chart({
+		this.chart = new JSC.Chart({
 			targetElement: this.chartTargetElement.nativeElement,
 			debug: true,
 			type: 'radar column',

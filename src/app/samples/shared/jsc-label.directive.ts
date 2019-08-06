@@ -9,6 +9,8 @@ import {
 	Input
 } from '@angular/core';
 
+import JSC from './jscharting-common';
+
 @Directive({
 	selector: '[appJSCLabel]'
 })
@@ -39,7 +41,7 @@ export class JSCLabelDirective implements AfterViewInit, OnChanges, OnDestroy {
 
 	private createLabel(config?: string) {
 		this.destroyLabel();
-		window['JSC'].label(
+		JSC.label(
 			this.element.nativeElement,
 			config
 			);

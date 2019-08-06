@@ -3,6 +3,8 @@ import {Component, AfterViewInit, OnDestroy, ViewChild, ElementRef, ChangeDetect
 import {FileContentService} from '../shared/file-content.service';
 import {ScriptService} from '../shared/script.service';
 
+import JSC from '../shared/jscharting-common';
+
 @Component({
 	selector: 'app-map-data-browser',
 	templateUrl: './map-data-browser.component.html',
@@ -104,7 +106,7 @@ export class MapDataBrowserComponent implements AfterViewInit, OnDestroy {
 
 	private renderChart() {
 		const chartConfig = this.createChartConfig();
-		this.chart = new window['JSC'].Chart(chartConfig, (chart) => {
+		this.chart = new JSC.Chart(chartConfig, (chart) => {
 			this.fillCountries(chart);
 			this.updateChart(this.country.id, chart);
 		});
@@ -117,11 +119,11 @@ export class MapDataBrowserComponent implements AfterViewInit, OnDestroy {
 	}
 
 	private createSeriesConfigByCountryId(id) {
-		const palette = window['JSC'].getPalette(0);
+		const palette = JSC.getPalette(0);
 		return [{
 			map: id,
 			name: this.mapDataIndex[id].name,
-			palette: window['JSC'].colorToPalette(palette[this.paletteIndex++ % palette.length], {
+			palette: JSC.colorToPalette(palette[this.paletteIndex++ % palette.length], {
 				saturation: .3,
 				hue: .05,
 				lightness: .5

@@ -1,5 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 
+import JSC from '../shared/jscharting-common';
+
 const defaultConfig: any = {
 	debug: true,
 	type: 'calendar month solid',
@@ -66,7 +68,7 @@ export class DirectiveCalendarEventsComponent implements AfterViewInit, OnInit {
 				return response.text();
 			})
 			.then((text) => {
-				const data = window['JSC'].parseCsv(text).data;
+				const data = JSC.parseCsv(text).data;
 				this.chartOptions = Object.assign(defaultConfig, {
 					series: [{
 						points: data.map(function (row) {
@@ -75,7 +77,7 @@ export class DirectiveCalendarEventsComponent implements AfterViewInit, OnInit {
 <span style="color:#78909c;font-size:12px; font-weight:normal">${row[2]}</span>
 <br>
 <span style="font-size:8px; font-weight:normal; color:#b0bec5;">
-${window['JSC'].formatDate(new Date(row[0]), 't')} - ${window['JSC'].formatDate(new Date(row[1]), 't')}
+${JSC.formatDate(new Date(row[0] as any), 't')} - ${JSC.formatDate(new Date(row[1] as any), 't')}
 </span>`;
 							return {
 								date: [
