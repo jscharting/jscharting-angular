@@ -10,7 +10,7 @@ import JSC from '../shared/jscharting-common';
 	styleUrls: ['./calendar-exams.component.css']
 })
 export class CalendarExamsComponent implements AfterViewInit, OnDestroy {
-	@ViewChild('chartTargetElement') chartTargetElement: ElementRef;
+	@ViewChild('chartTargetElement', null) chartTargetElement: ElementRef;
 
 	private chart: any;
 

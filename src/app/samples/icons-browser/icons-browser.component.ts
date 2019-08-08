@@ -10,10 +10,10 @@ import JSC from '../shared/jscharting-common';
 	styleUrls: ['./icons-browser.component.css']
 })
 export class IconsBrowserComponent implements AfterViewInit {
-	@ViewChild('chartTargetElement') chartTargetElement: ElementRef;
-	@ViewChild('iconsGroupElement') iconsGroupElement: ElementRef;
-	@ViewChild('nextIconElement') nextIconElement: ElementRef;
-	@ViewChild('selectedIconElement') selectedIconElement: ElementRef;
+	@ViewChild('chartTargetElement', null) chartTargetElement: ElementRef;
+	@ViewChild('iconsGroupElement', null) iconsGroupElement: ElementRef;
+	@ViewChild('nextIconElement', null) nextIconElement: ElementRef;
+	@ViewChild('selectedIconElement', null) selectedIconElement: ElementRef;
 
 	chart: any;
 

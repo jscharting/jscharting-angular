@@ -9,8 +9,8 @@ import JSC from '../shared/jscharting-common';
 	styleUrls: ['./calendar-planner-selection.component.css']
 })
 export class CalendarPlannerSelectionComponent implements AfterViewInit, OnDestroy {
-	@ViewChild('chartTargetElement') chartTargetElement: ElementRef;
-	@ViewChild('eventsElement') eventsElement: ElementRef;
+	@ViewChild('chartTargetElement', null) chartTargetElement: ElementRef;
+	@ViewChild('eventsElement', null) eventsElement: ElementRef;
 
 	private chart: any;
 

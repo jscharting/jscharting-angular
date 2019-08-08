@@ -8,7 +8,7 @@ import {JSChartingService} from '../shared/jscharting.service';
 	styleUrls: ['./service-sample.component.css']
 })
 export class ServiceSampleComponent implements AfterViewInit, OnDestroy {
-	@ViewChild('chartTargetElement') chartTargetElement: ElementRef;
+	@ViewChild('chartTargetElement', null) chartTargetElement: ElementRef;
 
 	private chart: any;
 

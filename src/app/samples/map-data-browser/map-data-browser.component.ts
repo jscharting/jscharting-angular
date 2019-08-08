@@ -11,7 +11,7 @@ import JSC from '../shared/jscharting-common';
 	styleUrls: ['./map-data-browser.component.css']
 })
 export class MapDataBrowserComponent implements AfterViewInit, OnDestroy {
-	@ViewChild('chartTargetElement') chartTargetElement: ElementRef;
+	@ViewChild('chartTargetElement', null) chartTargetElement: ElementRef;
 
 	countries: any[];
 	country: any;
