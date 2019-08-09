@@ -15,7 +15,7 @@ This set of samples demonstrate how to use JSCharting with the Angular framework
 1) In your component import Chart and create an instance.
 
 ```typescript
-import {Chart} from './jscharting/jscharting';
+import {Chart} from 'jscharting';
 
 this.chart = new Chart({});
 ```
