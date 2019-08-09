@@ -188,11 +188,11 @@ export class IconsBrowserComponent implements AfterViewInit {
 					};
 
 				if (pagesNumber > 1) {
-					addArrowButton('icons/material/hardware/keyboard-arrow-left', 'go back', Math.max(page - 1, 0));
+					addArrowButton('material/hardware/keyboard-arrow-left', 'go back', Math.max(page - 1, 0));
 					for (let i = 0; i < pagesNumber; i++) {
 						addNumberButton(i);
 					}
-					addArrowButton('icons/material/hardware/keyboard-arrow-right', 'go forward', Math.min(page + 1, pagesNumber - 1));
+					addArrowButton('material/hardware/keyboard-arrow-right', 'go forward', Math.min(page + 1, pagesNumber - 1));
 				}
 
 				if (allIconsNumber > this.pageSizes[0]) {
