@@ -6,11 +6,37 @@
 independent results across all devices and platorms. Every JSCharting license includes the 
 full suite of 150+ advanced chart types, interactive stock charts and JSMapping at no additional charge.
 
-## Official JSCharting Samples for Angular 6
+## Official JSCharting Samples for Angular
 
 This set of samples demonstrate how to use JSCharting with the Angular framework. Samples are located in the `src/app/samples` folder.
 
 ### How to use
+
+Install the necessary packages including JSCharting.
+
+```console
+npm install
+```
+
+Run the webpack dev server: http://localhost:4200/
+
+```console
+npm run start
+```
+
+Or build the dashboard manually.
+
+```console
+npm run build
+```
+
+Or.
+
+```console
+npm run build-prod
+```
+
+### How it works
 
 1) In your component import Chart and create an instance.
 
